@@ -13,9 +13,6 @@ dist
 dist-ssr
 *.local
 
-# Folders
-readme-images
-
 # IDE folders
 .vscode/*
 !.vscode/extensions.json
