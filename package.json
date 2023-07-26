@@ -21,7 +21,6 @@
     "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.0",
-    "nodemon": "^3.0.1",
-    "react-loader-spinner": "^5.3.4"
+    "nodemon": "^3.0.1"
   }
 }

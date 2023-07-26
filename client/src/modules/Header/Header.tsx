@@ -1,9 +1,10 @@
 import {Navbar} from "./components/Navbar/Navbar.tsx";
+import {HeaderContainer} from "./Header.styled.tsx";
 
 export const Header = () => {
 	return (
-		<div>
+		<HeaderContainer>
 			<Navbar/>
-		</div>
+		</HeaderContainer>
 	);
 };
