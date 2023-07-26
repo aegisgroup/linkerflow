@@ -16,9 +16,9 @@
 
 <br>
 
-![All](./readme-images/01.png)
+![All](./client/src/assets/images/readme/01.png)
 
-![All](./readme-images/02.png)
+![All](./client/src/assets/images/readme/01.png)
 
 ## **Technologies**
 
