@@ -1,9 +1,9 @@
 import {Header} from "../Header/Header.tsx";
-import {Container} from "../../shared/styles/Common.styled.tsx";
 import {Suspense, useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
-import {Footer} from "../Footer/Footer.tsx";
 import {Loader} from "../Loader/Loader.tsx";
+import {Footer} from "../Footer/Footer.tsx";
+import {Container} from "../../styles/Common.styled.tsx";
 
 export const Layout = () => {
 	const [isLoad, setIsLoad] = useState<boolean>(false);
@@ -28,7 +28,6 @@ export const Layout = () => {
 				</>
 				: <Loader/>
 			}
-
 		</>
 	);
 };
