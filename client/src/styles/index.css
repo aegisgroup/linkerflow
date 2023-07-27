@@ -2,17 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 * {
-	font-family: 'JetBrains Mono', monospace;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-body {
-	background-color: #333;
-}
-
 a {
 	text-decoration: none;
 	color: #000;
+}
+
+ul {
+	list-style-type: none;
 }

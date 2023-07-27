@@ -30,7 +30,6 @@ export const SvgSelector = ({data, feature}: Props) => {
 				</SvgElement>
 			)
 		case 'ua-flag':
-			console.log(feature)
 			return (
 				<SvgElement className={data} width="35" height="25" viewBox="0 0 35 25" fill="none"
 				            xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +38,6 @@ export const SvgSelector = ({data, feature}: Props) => {
 					<path id={`${feature && "ua-feature-bottom"}`}
 					      d="M0 12.5H35V18C35 21.866 31.866 25 28 25H7C3.13401 25 0 21.866 0 18V12.5Z" fill="#FFD808"/>
 				</SvgElement>
-
 			)
 		case 'uk-flag':
 			return (
