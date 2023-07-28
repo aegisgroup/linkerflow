@@ -1,4 +1,7 @@
 export const CONSTANTS = {
+	mainContainer: '1280px',
+
+	// =============
 	textFontSize: '16px',
 	linkFontSize: '22px',
 	subTitleFontSize: '22px',
@@ -9,6 +12,8 @@ export const CONSTANTS = {
 };
 
 export const {
+	mainContainer,
+
 	textFontSize,
 	linkFontSize,
 	subTitleFontSize,

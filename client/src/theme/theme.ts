@@ -1,5 +1,5 @@
 import {palette} from "./palette.ts";
-import {Theme} from "../context/ThemeContext.tsx";
+import {Theme} from "../core/enum/theme.ts";
 
 export const themeSettings: any = (mode: string) => {
 	const colors = palette(mode);

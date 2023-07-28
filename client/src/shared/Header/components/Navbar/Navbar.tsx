@@ -2,18 +2,18 @@ import {NavbarContainer, NavbarList, NavbarListItem, NavbarListLink} from "./Nav
 import {BiMoon, BiSun, BiUserCircle} from "react-icons/bi";
 import {SvgSelector} from "../../../SvgSelector/SvgSelector.tsx";
 import {useEffect, useState} from "react";
-import {palette} from "../../../../theme/palette.ts";
 import {useMode} from "../../../../hooks/useMode.ts";
 import {v4 as uuidv4} from 'uuid';
 import {useDispatch, useSelector} from "react-redux";
 import {Theme} from "../../../../core/enum/theme.ts";
 import {changeTheme} from "../../../../store/slices/theme/theme.slice.ts";
+import {home, profile} from "../../../../core/constants/routes.ts";
 
 export const Navbar = () => {
-	const theme = useMode();
+	const [themePalette] = useMode();
+
 	const themeMode = useSelector(state => state.theme.theme)
 	const dispatch = useDispatch();
-
 	const [feature, setFeature] = useState(false);
 	useEffect(() => {
 		const data = new Date;
@@ -22,8 +22,6 @@ export const Navbar = () => {
 		// 	setFeature(true);
 		// }
 	}, [])
-
-	const themePalette = palette(theme.palette.mode);
 
 	const navbarLinks = {
 		"/": "Головна",
@@ -34,7 +32,12 @@ export const Navbar = () => {
 
 	return (
 		<NavbarContainer>
+
 			<NavbarList>
+				<NavbarListLink to={home}><SvgSelector data="logo"/></NavbarListLink>
+			</NavbarList>
+
+			<NavbarList className="pagesLinks">
 				{Object.entries(navbarLinks).map(link =>
 					<NavbarListLink
 						key={uuidv4()}
@@ -43,17 +46,17 @@ export const Navbar = () => {
 						to={link[0]}>{link[1]}</NavbarListLink>)}
 			</NavbarList>
 
-			<NavbarList>
+			<NavbarList className="customizeLinks">
+				<NavbarListItem><SvgSelector data="brush"/></NavbarListItem>
+				<NavbarListItem><SvgSelector data="ua-flag" feature={feature}/></NavbarListItem>
+				{/*<NavbarListItem><SvgSelector data="uk-flag"/></NavbarListItem>*/}
 				<NavbarListItem onClick={() => dispatch(changeTheme(themeMode))}>
 					{themeMode === Theme.LIGHT ? <BiMoon/> : <BiSun/>}
 				</NavbarListItem>
-				<NavbarListItem><BiUserCircle/></NavbarListItem>
 			</NavbarList>
 
 			<NavbarList>
-				<NavbarListItem><SvgSelector data="brush"/></NavbarListItem>
-				<NavbarListItem><SvgSelector data="ua-flag" feature={feature}/></NavbarListItem>
-				<NavbarListItem><SvgSelector data="uk-flag"/></NavbarListItem>
+				<NavbarListLink className="profile" to={profile}><BiUserCircle/></NavbarListLink>
 			</NavbarList>
 		</NavbarContainer>
 	);
