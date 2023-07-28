@@ -1,24 +1,23 @@
 import {Route, Routes} from 'react-router-dom';
 import {lazy} from 'react';
 import {CssBaseline, GlobalStyles, ThemeProvider} from '@mui/material';
-import {palette} from './theme/palette.ts';
-import {Layout} from './modules';
 import {useMode} from './hooks/useMode.ts';
 import {community, home} from "./core/constants/routes.ts";
+import {Layout} from "./shared";
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.tsx'));
 const CommunityPage = lazy(() => import('./pages/CommunityPage/CommunityPage.tsx'));
 
 export const App = () => {
-	const theme = useMode();
+	const [themePalette, themeMode] = useMode();
 
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={themeMode}>
 			<CssBaseline/>
 			<GlobalStyles styles={{
 				body: {
-					backgroundColor: palette(theme.palette.mode).primary.DEFAULT,
-					transition: `background-color, color ${theme.transitions.duration.complex}ms linear`
+					backgroundColor: themePalette.primary.DEFAULT,
+					transition: `background-color, color ${themeMode.transitions.duration.complex}ms linear`
 				}
 			}}/>
 
